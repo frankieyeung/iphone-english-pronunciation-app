@@ -14,6 +14,11 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
+            
+            Text ("English Pronunciation App"
+            )
+            .font(.system(size: 32))
+            
             TextField (
                 "Input a word",
             text: $word
@@ -43,9 +48,9 @@ struct ContentView: View {
         
         
         func speak(text: String) {
-            let utterance = AVSpeechUtterance(string: text)
-            utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
-            synthesizer.speak(utterance)
+            let word = AVSpeechUtterance(string: text)
+            word.voice = AVSpeechSynthesisVoice(language: "en-US")
+            synthesizer.speak(word)
         }
     
 }
